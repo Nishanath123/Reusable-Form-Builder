@@ -1,70 +1,151 @@
-# Getting Started with Create React App
+# Reusable Form Builder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This project is a **Reusable Form Builder** built with **ReactJS** using **React Hook Form** for state management. It allows users to dynamically create and manage form fields, supporting various input types including text, email, number, password, date, dropdown, radio buttons, checkboxes, and file uploads. The project also features an **Admin Panel** for form customization.
 
-## Available Scripts
+## Features
+- **Dynamic Form Creation**: Define form fields without hardcoding.
+- **Admin Panel**: Easily add, edit, remove, and clear form fields.
+- **Multiple Input Types**: Supports text, email, number, password, date, select, radio, checkbox, and file uploads.
+- **Validation**: Required fields are enforced.
+- **Form Submission**: Displays submitted data in JSON format.
+- **Reset Functionality**: Clear all fields or reset the form.
+- **Optimized Rendering**: Uses `React Hook Form` to prevent unnecessary re-renders.
 
-In the project directory, you can run:
+## Tech Stack
+- **ReactJS** (Component-based UI development)
+- **React Hook Form** (Efficient form handling)
+- **Tailwind CSS** (Styling and layout)
+- **React Icons** (UI enhancements)
+- **React Datepicker** (Date selection UI)
 
-### `npm start`
+## Installation & Setup
+### Prerequisites
+Ensure you have **Node.js** and **npm** installed.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Steps
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/reusable-form-builder.git
+   cd reusable-form-builder
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the development server:
+   ```sh
+   npm start
+   ```
+4. Open `http://localhost:3000` in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
+```
+├── src
+│   ├── components
+│   │   ├── FormBuilder.js  # Handles dynamic form rendering & validation
+│   │   ├── AdminPanel.js   # UI for managing form fields
+│   ├── App.js              # Main application entry point
+│   ├── index.js            # React DOM rendering
+│   ├── styles.css          # Styling (Tailwind)
+│   ├── assets              # Static assets (if any)
+│   ├── utils               # Utility functions (future expansion)
+├── public
+│   ├── index.html          # Main HTML template
+├── package.json            # Dependencies & scripts
+├── README.md               # Documentation
+```
 
-### `npm test`
+## Usage Guide
+### Adding Fields
+1. Use the **Admin Panel** to enter a **Field Label**, **Field Name**, and select a **Field Type**.
+2. If the field type is **select** or **radio**, add **comma-separated options**.
+3. For file uploads, specify **allowed extensions**.
+4. Click **Add Field** to insert the field into the form.
+5. Click **Clear All** to remove all fields.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Editing & Removing Fields
+- Click the **Edit (✏️)** button next to a field to update it.
+- Click the **Delete (🗑️)** button to remove a specific field.
 
-### `npm run build`
+### Submitting the Form
+- Fill in the form and click **Submit**.
+- The submitted data appears in a JSON preview.
+- Click **Reset** to clear the form.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Adding New Features
+### 1. **Adding a New Input Type**
+- Modify `AdminPanel.js`:
+  ```jsx
+  <option value="newtype">New Input Type</option>
+  ```
+- Update `FormBuilder.js`:
+  ```jsx
+  {field.type === "newtype" && (
+    <input type="newtype" {...register(field.name)} className="w-full border p-2" />
+  )}
+  ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. **Custom Validation**
+- Add validation rules inside `FormBuilder.js`:
+  ```jsx
+  {errors[field.name] && <p className="text-red-500 text-xs">Custom error message</p>}
+  ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. **Styling Enhancements**
+- Modify `styles.css` or add Tailwind classes inside components.
 
-### `npm run eject`
+## Deployment
+To deploy on **Vercel**:
+```sh
+npm run build
+vercel deploy
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## GitHub Repository Management
+### Steps to Push to GitHub
+1. Initialize Git (if not already initialized):
+   ```sh
+   git init
+   ```
+2. Add remote repository:
+   ```sh
+   git remote add origin https://github.com/yourusername/reusable-form-builder.git
+   ```
+3. Add and commit changes:
+   ```sh
+   git add .
+   git commit -m "Initial commit"
+   ```
+4. Push to GitHub:
+   ```sh
+   git push -u origin main
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## EXAMPLE OF USER REGISTIRATION
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![alt text](image.png)
 
-## Learn More
+The above image showcases the Admin Panel and Dynamic Form of the Reusable Form Builder.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Admin Panel (Left Section)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Allows users to configure dynamic forms by specifying:**
 
-### Code Splitting
+    --> Form Type: Defines the type of form being created.
+    --> Field Label: Defines the display name of the field.
+    --> Field Name: Unique identifier for the form field.
+    --> Field Type: Dropdown to select different field types (Text, Number, Email, etc.).
+    --> Required Checkbox: Marks the field as mandatory.
+## Buttons:
+    --> "Set Form Type" (Blue Button): Sets the form type.
+    --> "Add Field" (Green Button): Adds a new field to the form.
+    --> "Clear All" (Red Button): Removes all added fields.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Dynamic Form (Right Section)
 
-### Analyzing the Bundle Size
+    --> Displays the dynamically generated form based on the configurations set in the Admin Panel.
+    --> Contains Submit and Reset buttons for form submission and resetting the form.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This feature allows users to create, modify, and manage dynamic forms without hardcoding fields, making the form builder reusable for various applications.

@@ -95,13 +95,6 @@ Ensure you have **Node.js** and **npm** installed.
 ### 3. **Styling Enhancements**
 - Modify `styles.css` or add Tailwind classes inside components.
 
-## Deployment
-To deploy on **Vercel**:
-```sh
-npm run build
-vercel deploy
-```
-
 ## GitHub Repository Management
 ### Steps to Push to GitHub
 1. Initialize Git (if not already initialized):

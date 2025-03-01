@@ -157,13 +157,19 @@ This feature allows users to create, modify, and manage dynamic forms without ha
    ✅ Date Picker & File Upload Support – Includes an interactive date picker and file upload functionality.
 
 ## Left Panel (Admin Panel):
+
   --> Users can dynamically add and remove fields.
+  
   --> Field types include email, select, checkbox, radio, date, and more.
+  
   --> Clicking "Add Field" updates the form dynamically.
   
 ## Right Panel (Generated Form):
+
   --> Shows the user-facing form based on the configured fields.
+  
   --> Includes a date picker, radio buttons, and a file upload option.
+  
   --> Displays the submitted form data in JSON format below the form.
   
 ## How to use

@@ -149,3 +149,35 @@ The above image showcases the Admin Panel and Dynamic Form of the Reusable Form 
     --> Contains Submit and Reset buttons for form submission and resetting the form.
 
 This feature allows users to create, modify, and manage dynamic forms without hardcoding fields, making the form builder reusable for various applications.
+
+![image](https://github.com/user-attachments/assets/9b400415-9661-42de-b5b3-c35407d59924)
+
+Features
+✅ Dynamic Form Fields – Supports text, email, number, password, date, dropdown, radio buttons, checkboxes, and file uploads.
+✅ Admin Panel – Allows adding, editing, and deleting form fields with live updates.
+✅ Validation Support – Fields can be marked as required.
+✅ JSON Data Output – Captures and displays submitted form data in a structured JSON format.
+✅ Date Picker & File Upload Support – Includes an interactive date picker and file upload functionality.
+
+Left Panel (Admin Panel):
+  --> Users can dynamically add and remove fields.
+  --> Field types include email, select, checkbox, radio, date, and more.
+  --> Clicking "Add Field" updates the form dynamically.
+Right Panel (Generated Form):
+  --> Shows the user-facing form based on the configured fields.
+  --> Includes a date picker, radio buttons, and a file upload option.
+  --> Displays the submitted form data in JSON format below the form.
+## How to use
+1️⃣ Set up the form in the Admin Panel by adding fields dynamically.
+2️⃣ Fill out the generated form with user inputs.
+3️⃣ Submit the form to capture structured data.
+4️⃣ View the submitted data in JSON format at the bottom of the screen.
+
+
+## User Registiration From Snapshots
+
+![image](https://github.com/user-attachments/assets/3b30b4e0-5dc9-4b9f-b22c-b143c55afc7a)
+![image](https://github.com/user-attachments/assets/ceedbb56-56af-47b0-8fb9-f4f7b8351b2d)
+![image](https://github.com/user-attachments/assets/c108f37e-1b84-44ab-9d1c-2f3c0921227f)
+
+
